@@ -11,7 +11,7 @@ interface SelectedUserShowProps {
 }
 
 export const SelectedUserShow: React.FC<SelectedUserShowProps> = ({ selectedUser, handleQuitSelectedUser, handleClickSelectedRepoShowComponent }) => {
-    console.log(selectedUser);
+
     const handleClick = selectedUser ? () => {} : handleClickSelectedRepoShowComponent;
     return (
 
