@@ -36,6 +36,8 @@ export const getUsersList = async (query: string) => {
       body: JSON.stringify({ query: getUsersQuery }),
     })
     const data = await response.json()
+    console.log(data);
+    
     return data.data.search.edges
   } catch (error) {
     console.error('Error:', error)
@@ -82,6 +84,8 @@ export const getUserRepositories = async (userLogin: string) => {
       body: JSON.stringify({ query: getUsersQuery }),
     })
     const data = await response.json()
+    console.log(data);
+    
     return data.data.repositoryOwner.repositories.nodes
   } catch (error) {
     console.error('Error:', error)
