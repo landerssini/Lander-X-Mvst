@@ -55,10 +55,10 @@ export const App = () => {
       setUserResults([]);
     }
   }, [searchQuery])
-   /**
-   * Event handler for selecting a user.
-   * @param {UserList} user - The selected user.
-   */
+  /**
+  * Event handler for selecting a user.
+  * @param {UserList} user - The selected user.
+  */
   const handleSelectUser = async (user: UserList) => {
     setSelectedUser(user)
     setSearchQuery("")
@@ -90,8 +90,8 @@ export const App = () => {
     <>
       <div className="h-screen w-screen pt-2 flex flex-col items-center px-3 relative gap-3 bg-[url('./assets/bg/bg.svg')] bg-cover">
         <Logo />
-        <SelectedUserShow handleQuitSelectedUser={handleQuitSelectedUser} selectedUser={selectedUser} handleClickSelectedRepoShowComponent={handleClickSelectedRepoShowComponent}/>
-        <SearchBar handleSearchInputChange={handleSearchInputChange} searchQuery={searchQuery} selectedUser={selectedUser} inputRef={inputRef}/>
+        <SelectedUserShow handleQuitSelectedUser={handleQuitSelectedUser} selectedUser={selectedUser} handleClickSelectedRepoShowComponent={handleClickSelectedRepoShowComponent} />
+        <SearchBar handleSearchInputChange={handleSearchInputChange} searchQuery={searchQuery} selectedUser={selectedUser} inputRef={inputRef} />
         {selectedRepo ? (
           <SelectedRepoShow handleQuitSelectedRepo={handleQuitSelectedRepo} selectedRepo={selectedRepo} />
         ) : selectedUser ? (
@@ -102,9 +102,9 @@ export const App = () => {
           ) : (
             <LoadingRepos />
           ) : null
-        ) : userResults.length > 0 ? (
+        ) : userResults ? (userResults.length > 0 ? (
           <UsersList handleSelectUser={handleSelectUser} userResults={userResults} />
-        ) : null}
+        ) : null) : null}
       </div>
     </>
   );
