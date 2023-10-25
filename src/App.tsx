@@ -95,13 +95,13 @@ export const App = () => {
         {selectedRepo ? (
           <SelectedRepoShow handleQuitSelectedRepo={handleQuitSelectedRepo} selectedRepo={selectedRepo} />
         ) : selectedUser ? (
-          repoResults.length > 0 ? (
+          repoResults ? repoResults.length > 0 ? (
             <RepoList handleSelectRepo={handleSelectRepo} repoResults={repoResults} searchQuery={searchQuery} />
           ) : noRepoAlert ? (
             <NoRepositoryFound />
           ) : (
             <LoadingRepos />
-          )
+          ) : null
         ) : userResults.length > 0 ? (
           <UsersList handleSelectUser={handleSelectUser} userResults={userResults} />
         ) : null}
