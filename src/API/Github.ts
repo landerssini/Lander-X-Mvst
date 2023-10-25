@@ -31,12 +31,14 @@ export const getUsersList = async (query: string) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${import.meta.env.VITE_GITUHUB_API_KEY}`
+        'Authorization': `Bearer ${import.meta.env.VITE_GITHUB_API_KEY}`
       },
       body: JSON.stringify({ query: getUsersQuery }),
     })
     const data = await response.json()
     console.log(data);
+    console.log(import.meta.env.VITE_GITHUB_API_KEY);
+    
     
     return data.data.search.edges
   } catch (error) {
@@ -79,7 +81,7 @@ export const getUserRepositories = async (userLogin: string) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${import.meta.env.VITE_GITUHUB_API_KEY}`
+        'Authorization': `Bearer ${import.meta.env.VITE_GITHUB_API_KEY}`
       },
       body: JSON.stringify({ query: getUsersQuery }),
     })
