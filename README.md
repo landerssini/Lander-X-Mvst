@@ -88,7 +88,7 @@ To deploy this project run
 
 ### 1. Clone the Repository:
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/landerssini/Lander-X-Mvst.git
 cd repository-name
 ```
 ### 2. Install Dependencies:
