@@ -1,11 +1,11 @@
 import React from 'react'
-import { UserList } from '../../types';
+import { UserList } from '../../types' 
 import followerIcon from "../../assets/followersIcon.png"
 
 
 interface UserCardProps {
     user: UserList
-    handleSelectUser: (user: UserList) => void;
+    handleSelectUser: (user: UserList) => void 
 }
 
 export const UserCard: React.FC<UserCardProps> = ({ user, handleSelectUser }) => {

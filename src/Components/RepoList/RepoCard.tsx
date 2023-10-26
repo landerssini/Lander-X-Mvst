@@ -2,10 +2,10 @@ import { formatNumber } from "../../Functions"
 import { Tooltip as ReactTooltip } from "react-tooltip"
 import starIcon from "../../assets/starIcon.svg"
 import forkIcon from "../../assets/forkIcon.svg"
-import { Repository } from "../../types";
+import { Repository } from "../../types" 
 
 interface RepoCardProps {
-    handleSelectRepo: (repository: Repository) => void;
+    handleSelectRepo: (repository: Repository) => void 
     repository: Repository
 }
 

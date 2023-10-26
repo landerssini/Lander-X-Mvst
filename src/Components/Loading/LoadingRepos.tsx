@@ -12,7 +12,7 @@ export const LoadingRepos = () => {
                 glassColor='#c0efff'
                 color='#e15b64'
             />
-            <p>Downloading Repositories</p>
+            <p className='text-white'>Downloading Repositories</p>
         </div>
     )
 }

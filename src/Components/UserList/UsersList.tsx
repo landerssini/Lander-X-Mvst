@@ -1,11 +1,11 @@
 import React from 'react'
-import { UserList } from '../../types';
-import { UserCard } from './UserCard';
+import { UserList } from '../../types'
+import { UserCard } from './UserCard'
 
 
 interface UserListProps {
-    userResults: UserList[];
-    handleSelectUser: (user: UserList) => void;
+    userResults: UserList[]
+    handleSelectUser: (user: UserList) => void
   }
 
   

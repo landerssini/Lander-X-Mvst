@@ -36,17 +36,13 @@ export const getUsersList = async (query: string) => {
       body: JSON.stringify({ query: getUsersQuery }),
     })
     const data = await response.json()
-    console.log(data);
-    console.log(import.meta.env.VITE_GITHUB_API_KEY);
-    
-    
     return data.data.search.edges
   } catch (error) {
     console.error('Error:', error)
   }
 }
 export const getUserRepositories = async (userLogin: string) => {
-  const getUsersQuery = `
+  const getUserRepositoriesQuery = `
   query RepositoryOwner {
     repositoryOwner(login: "${userLogin}") {
         resourcePath
@@ -75,7 +71,6 @@ export const getUserRepositories = async (userLogin: string) => {
         }
     }
 }`
-
   try {
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
@@ -83,11 +78,9 @@ export const getUserRepositories = async (userLogin: string) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${import.meta.env.VITE_GITHUB_API_KEY}`
       },
-      body: JSON.stringify({ query: getUsersQuery }),
+      body: JSON.stringify({ query: getUserRepositoriesQuery }),
     })
     const data = await response.json()
-    console.log(data);
-    
     return data.data.repositoryOwner.repositories.nodes
   } catch (error) {
     console.error('Error:', error)

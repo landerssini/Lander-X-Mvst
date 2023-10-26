@@ -1,5 +1,6 @@
 import React from 'react'
 import { UserList } from '../../types'
+import { Tooltip as ReactTooltip } from "react-tooltip"
 import user from "../../assets/user.png"
 import closeIcon from "../../assets/closeIcon.png"
 import githubIcon from "../../assets/githubIcon.png"
@@ -12,11 +13,11 @@ interface SelectedUserShowProps {
 
 export const SelectedUserShow: React.FC<SelectedUserShowProps> = ({ selectedUser, handleQuitSelectedUser, handleClickSelectedRepoShowComponent }) => {
 
-    const handleClick = selectedUser ? () => {} : handleClickSelectedRepoShowComponent;
+    const handleClick = selectedUser ? () => { } : handleClickSelectedRepoShowComponent
     return (
 
         <div className="flex  rounded-2xl items-center p-3 gap-3 w-fit border-2 " onClick={handleClick} >
-            <img src={selectedUser ? selectedUser.node.avatarUrl : user} alt="" className="rounded-full w-[7vh] h-[7vh]" />
+            <img src={selectedUser ? selectedUser.node.avatarUrl : user} alt="" className={`rounded-full w-[7vh] h-[7vh] ${selectedUser ? "" : "invert"}`} />
             <div>
                 <p className="truncate text-white">{selectedUser ? selectedUser.node.login : "Select a user."}</p>
                 <p className="truncate font-light hidden md:block text-white">{selectedUser ? selectedUser.node.location : null}</p>
@@ -32,12 +33,22 @@ export const SelectedUserShow: React.FC<SelectedUserShowProps> = ({ selectedUser
                     <p className="hidden md:block text-white">Following</p>
                 </div>
                 <div>
-                    <a href={selectedUser.node.url} target='_blank' className='cursor-pointer'>
+                    <a href={selectedUser.node.url} target='_blank' data-tooltip-id="GithubProfile" className='cursor-pointer'>
                         <img src={githubIcon} alt="" className='w-[3vh] h-[3vh] invert' />
                     </a>
+                    <ReactTooltip
+                        id="GithubProfile"
+                        place="top"
+                        content="GitHub Profile"
+                    />
                 </div>
             </div> : null}
-            {selectedUser ? <img src={closeIcon} alt="" className="w-6 h-6 ml-auto md:ml-5 cursor-pointer bg-red-500 rounded-full p-1" onClick={handleQuitSelectedUser} /> : null}
+            {selectedUser ? <img src={closeIcon} alt="" data-tooltip-id="quitSelectedUser" className="w-6 h-6 ml-auto md:ml-5 cursor-pointer bg-red-500 rounded-full p-1" onClick={handleQuitSelectedUser} /> : null}
+            <ReactTooltip
+                id="quitSelectedUser"
+                place="right"
+                content="Quit User"
+            />
 
         </div>
     )

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react"
-import { getUserRepositories, getUsersList } from "./API/Github";
-import { Repository, UserList } from "./types";
-import { UsersList } from "./Components/UserList/UsersList";
-import { LoadingRepos } from "./Components/Loading/LoadingRepos";
-import { NoRepositoryFound } from "./Components/Loading/NoRepositoryFound";
-import { RepoList } from "./Components/RepoList/RepoList";
-import { SelectedRepoShow } from "./Components/SelectedRepoShow/SelectedRepoShow";
-import { SearchBar } from "./Components/SearchBar/SearchBar";
-import { SelectedUserShow } from "./Components/SelectedUserShow/SelectedUserShow";
-import { Logo } from "./Components/Logo/Logo";
+import { getUserRepositories, getUsersList } from "./API/Github" 
+import { Repository, UserList } from "./types" 
+import { UsersList } from "./Components/UserList/UsersList" 
+import { LoadingRepos } from "./Components/Loading/LoadingRepos" 
+import { NoRepositoryFound } from "./Components/Loading/NoRepositoryFound" 
+import { RepoList } from "./Components/RepoList/RepoList" 
+import { SelectedRepoShow } from "./Components/SelectedRepoShow/SelectedRepoShow" 
+import { SearchBar } from "./Components/SearchBar/SearchBar" 
+import { SelectedUserShow } from "./Components/SelectedUserShow/SelectedUserShow" 
+import { Logo } from "./Components/Logo/Logo" 
 
 /**
  * Main App component for the application.
@@ -23,13 +23,13 @@ export const App = () => {
   const [repoResults, setRepoResults] = useState<Repository[]>([])
   const [noRepoAlert, setNoRepoAlert] = useState<boolean>(false)
   const timeoutIdRef = useRef<number | null>(null)
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null) 
 
   const handleClickSelectedRepoShowComponent = () => {
     if (inputRef.current && inputRef.current instanceof HTMLInputElement) {
-      inputRef.current.focus();
+      inputRef.current.focus() 
     }
-  };
+  } 
 
   /**
    * Event handler for input change in the search bar.
@@ -47,12 +47,11 @@ export const App = () => {
       timeoutIdRef.current = window.setTimeout(async () => {
         const data = await getUsersList(searchQuery)
         setUserResults(data)
-        console.log(data);
 
 
-      }, 500);
+      }, 500) 
     } else {
-      setUserResults([]);
+      setUserResults([]) 
     }
   }, [searchQuery])
   /**
@@ -63,7 +62,6 @@ export const App = () => {
     setSelectedUser(user)
     setSearchQuery("")
     const data = await getUserRepositories(user.node.login)
-    console.log(data)
     if (data.length == 0) {
       setNoRepoAlert(true)
     }
@@ -107,8 +105,8 @@ export const App = () => {
         ) : null) : null}
       </div>
     </>
-  );
-};
+  ) 
+} 
 
 export default App
 
