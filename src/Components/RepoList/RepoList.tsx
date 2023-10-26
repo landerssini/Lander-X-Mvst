@@ -11,7 +11,7 @@ interface RepoListProps {
 export const RepoList: React.FC<RepoListProps> = ({ repoResults, searchQuery, handleSelectRepo }) => {
 
     return (
-        <div className=" overflow-x-hidden flex flex-col p-2 w-full gap-3 md:w-2/3 items-center">
+        <div className=" overflow-x-hidden flex flex-col p-2 w-full gap-3 md:w-3/4 items-center">
             {repoResults.filter((repo) => {
                 if (searchQuery.trim() === '') {
                     return true 

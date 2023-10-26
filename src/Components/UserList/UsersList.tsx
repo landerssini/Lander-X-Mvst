@@ -11,7 +11,7 @@ interface UserListProps {
   
 export const UsersList: React.FC<UserListProps> = ({ userResults, handleSelectUser }) => {
     return (
-        <div className={` overflow-x-hidden flex flex-col p-2 gap-3 w-full md:w-2/3  items-center`}>
+        <div className={` overflow-y-scroll flex flex-col p-2 gap-3 w-full md:w-3/4  items-center`}>
 
 
             {userResults.map((user, index) => {

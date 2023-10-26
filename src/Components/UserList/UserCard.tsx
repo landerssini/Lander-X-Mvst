@@ -10,7 +10,7 @@ interface UserCardProps {
 
 export const UserCard: React.FC<UserCardProps> = ({ user, handleSelectUser }) => {
     return (
-        <div className="md:hover:-translate-y-1 md:hover:scale-105 transition-all flex border-2 bg-white border-gray-300 rounded-2xl items-center p-3 gap-2 cursor-pointer shadow-2xl xl:w-1/2 w-full" onClick={() => handleSelectUser(user)}>
+        <div className="md:hover:-translate-y-1 md:hover:scale-105 transition-all flex border-2 bg-white border-gray-300 rounded-2xl items-center p-3 gap-2 cursor-pointer shadow-2xl xl:w-2/3 md:w-11/12 w-full" onClick={() => handleSelectUser(user)}>
 
             <img src={user.node.avatarUrl} alt="" className="w-1/6 md:w-1/12 rounded-full" />
             <div className="w-1/2">
