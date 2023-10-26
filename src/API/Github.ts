@@ -1,6 +1,9 @@
 
 
-
+  /**
+  * Function to search for github users that match the query that the user has indicated.
+  * @param {string} query - The query that the user wants to search for.
+  */
 export const getUsersList = async (query: string) => {
   const getUsersQuery = `
     query Search {
@@ -41,6 +44,10 @@ export const getUsersList = async (query: string) => {
     console.error('Error:', error)
   }
 }
+  /**
+  * Function that searches the repositories of the username that the user has selected.
+  * @param {string} userLogin - The user from whom the repositories are to be searched.
+  */
 export const getUserRepositories = async (userLogin: string) => {
   const getUserRepositoriesQuery = `
   query RepositoryOwner {

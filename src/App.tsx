@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react"
-import { getUserRepositories, getUsersList } from "./API/Github" 
-import { Repository, UserList } from "./types" 
-import { UsersList } from "./Components/UserList/UsersList" 
-import { LoadingRepos } from "./Components/Loading/LoadingRepos" 
-import { NoRepositoryFound } from "./Components/Loading/NoRepositoryFound" 
-import { RepoList } from "./Components/RepoList/RepoList" 
-import { SelectedRepoShow } from "./Components/SelectedRepoShow/SelectedRepoShow" 
-import { SearchBar } from "./Components/SearchBar/SearchBar" 
-import { SelectedUserShow } from "./Components/SelectedUserShow/SelectedUserShow" 
-import { Logo } from "./Components/Logo/Logo" 
+import { getUserRepositories, getUsersList } from "./API/Github"
+import { Repository, UserList } from "./types"
+import { UsersList } from "./Components/UserList/UsersList"
+import { LoadingRepos } from "./Components/Loading/LoadingRepos"
+import { NoRepositoryFound } from "./Components/Loading/NoRepositoryFound"
+import { RepoList } from "./Components/RepoList/RepoList"
+import { SelectedRepoShow } from "./Components/SelectedRepoShow/SelectedRepoShow"
+import { SearchBar } from "./Components/SearchBar/SearchBar"
+import { SelectedUserShow } from "./Components/SelectedUserShow/SelectedUserShow"
+import { Logo } from "./Components/Logo/Logo"
 
 /**
  * Main App component for the application.
@@ -23,13 +23,16 @@ export const App = () => {
   const [repoResults, setRepoResults] = useState<Repository[]>([])
   const [noRepoAlert, setNoRepoAlert] = useState<boolean>(false)
   const timeoutIdRef = useRef<number | null>(null)
-  const inputRef = useRef<HTMLInputElement | null>(null) 
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
+  /**
+  * Event handler to focus on the search bar when clicking on "SelectedUserShow"
+  */
   const handleClickSelectedRepoShowComponent = () => {
     if (inputRef.current && inputRef.current instanceof HTMLInputElement) {
-      inputRef.current.focus() 
+      inputRef.current.focus()
     }
-  } 
+  }
 
   /**
    * Event handler for input change in the search bar.
@@ -39,6 +42,7 @@ export const App = () => {
     setSearchQuery(event.target.value)
 
   }
+
   useEffect(() => {
     if (timeoutIdRef.current !== null) {
       clearTimeout(timeoutIdRef.current)
@@ -49,9 +53,9 @@ export const App = () => {
         setUserResults(data)
 
 
-      }, 500) 
+      }, 500)
     } else {
-      setUserResults([]) 
+      setUserResults([])
     }
   }, [searchQuery])
   /**
@@ -67,6 +71,9 @@ export const App = () => {
     }
     setRepoResults(data)
   }
+  /**
+   * Event handler to deselect the selectedUser and the selectedRepo
+   */
   const handleQuitSelectedUser = async () => {
     setSelectedUser(undefined)
     setSelectedRepo(undefined)
@@ -80,6 +87,9 @@ export const App = () => {
   const handleSelectRepo = async (repository: Repository) => {
     setSelectedRepo(repository)
   }
+  /**
+   * Event handler to deselect the selectedRepo and and return to the page of all repositories.
+   */
   const handleQuitSelectedRepo = async () => {
     setSelectedRepo(undefined)
   }
@@ -105,8 +115,8 @@ export const App = () => {
         ) : null) : null}
       </div>
     </>
-  ) 
-} 
+  )
+}
 
 export default App
 
