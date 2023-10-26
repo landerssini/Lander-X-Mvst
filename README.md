@@ -6,7 +6,7 @@ This project is a web application that allows users to search for other GitHub u
 
 
 
-## Screenshots
+# Screenshots
 
 ![App Screenshot](https://github.com/landerssini/Lander-X-Mvst/blob/main/src/assets/ReadMeImages/readMeImage1.png?raw=true)
 
@@ -17,7 +17,7 @@ This project is a web application that allows users to search for other GitHub u
 ![App Screenshot](https://github.com/landerssini/Lander-X-Mvst/blob/main/src/assets/ReadMeImages/readMeImage4.png?raw=true)
 
 
-## Features
+# Features
 
 - User Search: Users can search for other GitHub users by entering a name in the search bar. The application displays real-time matching results as the user types.
 
@@ -28,7 +28,7 @@ This project is a web application that allows users to search for other GitHub u
 - Repository Interaction: Users can click on a repository to view additional details, such as the creation date and collaborators of the repository.
 
 
-## Tech Stack
+# Tech Stack
 
 - React: The frontend of the application is built with React, a popular JavaScript library for building interactive user interfaces.
 
@@ -75,51 +75,44 @@ Once the API call is successful, the retrieved data is set as the new userResult
 ### Dependencies:
 The useEffect hook has a dependency array [searchQuery]. This means the effect will be re-run whenever searchQuery changes. It ensures that the search operation is triggered whenever the user enters or removes characters in the search bar.
 This debouncing technique enhances the user experience by reducing unnecessary API calls and provides a smoother search interaction.
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
 
 
-## Installation
+# Installation
 
-### 1. Clone the Repository:
+## 1. Clone the Repository:
 ```bash
 git clone https://github.com/landerssini/Lander-X-Mvst.git
-cd repository-name
+cd Lander-X-Mvst
 ```
-### 2. Install Dependencies:
+## 2. Install Dependencies:
 ```bash
 npm install
 ```
-### 3.  Create a .env.local file in the project root and add your GitHub API access key:
+## 3.  Create a .env.local file in the project root and add your GitHub API access key:
 ```bash
 VITE_GITHUB_API_KEY=YOUR GITHUB API KEY
 ```
 Get your GitHub API key here: [GitHub Tokens](https://github.com/settings/tokens)
-### 4. Start the Application:
+## 4. Start the Application:
 ```bash
 npm run dev
 ```
     
-## Future Implementations
+# Future Implementations
 
 
-### 1. Adding Search Filters:
+## 1. Adding Search Filters:
 Allow users to refine search results by implementing filters, such as location, followers count for users, and stars count for repositories.
 Enhances search precision, enabling users to find relevant information quickly and efficiently.
 
-### 2. Improving Responsive Design:
+## 2. Improving Responsive Design:
 Ensure the application's layout and functionality adapt seamlessly across various devices, including mobile phones, tablets, and desktops.
 Provides a consistent and user-friendly experience, promoting accessibility and user retention.
 
-### 3. Implementing Tests:
+## 3. Implementing Tests:
 Develop unit and integration tests using tools like Jest and React Testing Library to validate component behaviors and functions.
 Identifies errors early, maintaining code quality, and fostering confidence in developers' contributions.
 
-### 4. Introducing Pagination:
+## 4. Introducing Pagination:
 Divide large search results into manageable pages, allowing users to navigate between different result sets.
 Improves page load speed and enables users to access more results without overwhelming the page, especially for extensive datasets.
