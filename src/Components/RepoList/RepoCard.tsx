@@ -14,7 +14,7 @@ export const RepoCard: React.FC<RepoCardProps>  = ({ handleSelectRepo, repositor
     const createdDate: string = new Date(repository.createdAt).toLocaleDateString()
 
     return (
-        <div className=" md:hover:-translate-y-1 md:hover:scale-105 bg-white border-2 border-gray-300 transition-all rounded-2xl flex p-3 shadow-2xl xl:w-2/3 md:w-11/12 w-full cursor-pointer" onClick={() => handleSelectRepo(repository)}>
+        <div className=" md:hover:-translate-y-1 md:hover:scale-105 bg-white border-2 border-gray-300 transition-all rounded-2xl flex p-3 shadow-2xl xl:w-2/3 md:w-11/12s w-full cursor-pointer" onClick={() => handleSelectRepo(repository)}>
             <div className="w-full">
                 <h2 className="text-xl font-semibold">{repository.name}</h2>
                 <h2 className="text-sm text-gray-500">{createdDate}</h2>
