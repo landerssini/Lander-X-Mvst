@@ -8,7 +8,7 @@ This project is a web application that allows users to search for other GitHub u
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/landerssini/Lander-X-Mvst/blob/main/src/assets/ReadMeImages/readMeImage1.png?raw=true)
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
