@@ -3,7 +3,7 @@
 
 This project is a web application that allows users to search for other GitHub users and their repositories. The application utilizes the GitHub API to perform real-time searches and provides detailed information about users and their repositories.
 
-
+Visit the web: [Netlify Deploy](https://github-researcher.netlify.app)
 
 
 # Screenshots
